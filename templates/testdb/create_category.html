@@ -1,0 +1,15 @@
+{% extends 'testdb/base2.html' %}
+{% block title %}Category create{% endblock %}
+{% block content %}
+<table>
+    <td>
+    <h2>Category creation</h2>
+     <form action="{% url 'create_category' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+         <button type="submit">Create</button>
+    </form>
+    </td>
+</table>
+<!--</div>-->
+{% endblock %}

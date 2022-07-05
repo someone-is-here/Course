@@ -1,0 +1,29 @@
+{% extends 'testdb/base.html' %}
+{% block title %}About{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <div class="About">
+        <p>Our story</p>
+        <div class="AboutUs">
+             <p class="Text-style" style="color:rgb(3, 245, 3); font-size: 35px;
+               text-shadow: 2px 2px 2px rgb(7, 19, 197);
+                letter-spacing: .1rem; text-align:center;">
+                   Hi! We are Learning style crew!
+               </p>
+            <p><br>"We decided to create a platform<br>
+            to help students with learning<br>
+            and reduce personal factors when assessing students".</p>
+            <img src="{% static 'testdb/images/about.jpg' %}" class="ImageAbout" style="float:right;margin-top:-7%; "/>
+
+        </div>
+        <div class="AboutUs">
+            <img src="{% static 'testdb/images/learning_about.jpg' %}" class="ImageAbout" style="float:left; margin-top: -7%; margin-right: 2%;"/>
+            <p>Here you can find a great amount of courses.<br>
+            In each course, after registration, you can find some study materials, tasks and tests.<br>
+            You will see your course statistics, after passing tests and solving tasks.</p>
+        </div>
+        <p style="font-size: 35px;">Enjoy your studies!</p>
+    </div>
+{% endblock %}

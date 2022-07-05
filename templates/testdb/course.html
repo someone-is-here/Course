@@ -1,0 +1,65 @@
+{% extends 'testdb/base2.html' %}
+{% block title %}Courses{% endblock %}
+{% block content %}
+<table>
+    <tr class="Text-style">
+        <th>Category</th>
+    <th>Title</th>
+    <th>Description</th>
+        <th>More</th>
+  </tr>
+
+    {% for item in courses %}
+        <tr class="Text-style">
+            <td>{{item.category}}</td>
+            <td>{% if item.icon %}
+                <img style='float:left;' src="{{item.icon.url}}"/>
+            {% endif %}{{item.title}}</td>
+            <td>{{item.description}}</td>
+            <td>
+      <ul class="CategoriesList">
+          {% if user.is_authenticated  %}
+            <li class="liForMenu"><a href="{% url 'course' item.pk %}">Details</a></li>
+          {% endif %}
+          {% if teacher %}
+            <li class="liForMenu"><a href="{% url 'update' item.pk %}">Update</a></li>
+            <li class="liForMenu"><a href="{% url 'delete' item.pk %}">Delete</a></li>
+          {% endif %}
+      </ul>
+            </td>
+        </tr>
+    {% endfor %}
+
+
+</table>
+{% if  page_obj.has_other_pages %}
+<nav>
+    <ul class="UlPage">
+        <li class="liPageItem">Pages: </li>
+
+        {% if  page_obj.has_previous %}
+        <li class="liPageItem">
+            <a href="?page={{ page_obj.previous_page_number }}">prev</a>
+        </li>
+        {% endif %}
+
+        {% for p in paginator.page_range %}
+        {% if page_obj.number == p %}
+        <li class="liPage liPageSelected">{{ p }}</li>
+        {% elif p >= page_obj.number|add:-1 and p <= page_obj.number|add:1 %}
+        <li class="liPage">
+            <a href="?page={{ p }}">{{ p }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+
+         {% if  page_obj.has_next %}
+        <li class="liPageItem">
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+        </li>
+        {% endif %}
+
+    </ul>
+</nav>
+{% endif %}
+{% endblock %}

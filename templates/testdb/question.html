@@ -1,0 +1,21 @@
+{% extends 'testdb/base2.html' %}
+{% block title %}test creation{% endblock %}
+{% block content %}
+<table>
+    <td>
+    <h2 style="font-size:30px;">{{title}}</h2>
+        {% for error in error_messages %}
+        <p style="color:white;font-size:26px;font-weight:bold;text-shadow:2px 2px 2px rgb(252, 3, 3);">{{error}}</p>
+        {% endfor %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ aform.as_p }}
+    <input type="hidden" name="{{aform.prefix}}" value="Submit" />
+    {{ bform.as_p }}
+    <input type="submit" name="{{bform.prefix}}" value="Submit" />
+</form>
+    </td>
+</table>
+
+{% endblock %}
+

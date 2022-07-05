@@ -1,0 +1,14 @@
+{% extends 'testdb/base2.html' %}
+{% block title %}Update{% endblock %}
+{% block content %}
+<table>
+    <td>
+    <h2>{{title}}</h2>
+     <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+         <p><button type="submit">Update</button></p>
+    </form>
+    </td>
+</table>
+{% endblock %}

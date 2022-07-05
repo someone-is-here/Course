@@ -1,0 +1,58 @@
+{% extends 'testdb/base2.html' %}
+{% block title %}Task{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div style="text-align:center;">
+     {% if teacher %}
+    <table>
+         <tr>
+            <th>Title</th>
+             <td>{{task_info.title}}</td>
+        </tr>
+         <tr>
+            <th>Task</th>
+             <td>{{task_info.task}}</td>
+        </tr>
+        {% if task_info.picture %}
+            <td colspan="2">
+                 <img src="{{task_info.picture.url}}" class="ImageAbout" style="border-radius:0"/>
+            </td>
+        {% endif %}
+        <tr>
+            <th>Result</th>
+            <td>{{task_info.result}}</td>
+        </tr>
+        <tr>
+            <th>Mark</th>
+            <td>{{task_info.mark}}</td>
+        </tr>
+    </table>
+
+        <button class="Text-style" id="UpdateTask"><a href="{% url 'update_task' task_info.pk %}" class="AStyle">Update</a></button>
+        <button class="Text-style" id="DeleteTask"><a href="{% url 'delete_task' task_info.pk %}" class="AStyle">Delete</a></button>
+    {% endif %}
+     {% if not teacher %}
+    <div>
+        {% if message %}
+        <p class="Message">{{message}}</p>
+        {% endif %}
+    </div>
+     <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="Question">
+        <p>{{task_info.task}}(Max_score:{{task_info.mark}})</p>
+        </div>
+         <label for="answer">Your answer: </label>
+        <input id="answer" type="text" name="answer" minlength="1" required>
+         <br>
+         <button type="submit">Submit</button>
+    </form>
+
+    {% endif %}
+    <table style="border:None;">
+        <th style="border:None;"><a href="{% url 'course' task_info.course_id %}">Back</a></th>
+    </table>
+</div>
+{% endblock %}

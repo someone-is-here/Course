@@ -1,0 +1,15 @@
+{% extends 'testdb/base2.html' %}
+{% block title %}Delete{% endblock %}
+{% block content %}
+<table>
+    <td>
+    <h2>{{title}}</h2>
+     <form action="" method="post">
+        {% csrf_token %}
+         <p>Do you want to delete {{object}}?</p>
+         <p><button type="submit" value="Confirm">Delete</button></p>
+    </form>
+    </td>
+</table>
+<!--</div>-->
+{% endblock %}

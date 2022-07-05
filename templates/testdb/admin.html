@@ -1,0 +1,29 @@
+{% extends 'testdb/base2.html' %}
+{% block title %}Admin account{% endblock %}
+{% block content %}
+{% block links %}
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+{% endblock %}
+<table style="text-align:left;">
+    <td>
+    <h2>Roles distribution</h2>
+     <form method="post" id="myForm">
+        {% csrf_token %}
+        {{ form.as_p }}
+         <p style="text-align:center;"><button type="submit" id="Confirm">Confirm</button></p>
+    </form>
+    </td>
+</table>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js">
+  </script>
+  <script>
+  $('#myForm').submit(function() {
+        toastr.info('Successfully changed role');
+        return true;
+    });
+    setTimeout(()=>{console.log()}, 3000)
+  </script>
+{% endblock %}

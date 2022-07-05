@@ -1,0 +1,19 @@
+{% extends 'testdb/base.html' %}
+{% block category %}
+<ul class="CategoriesList">
+         {% if category_selected == 0 %}
+            <li class="selected CategoryItem"><a href="{% url 'course'%}">All Categories</a></li>
+         {% else %}
+              <li class="CategoryItem"><a href="{% url 'course'%}">All Categories</a></li>
+         {% endif %}
+         {% for item in categories %}
+            {% if item.amount %}
+            {% if item.pk == category_selected %}
+                <li class="selected CategoryItem">{{item.name}}</li>
+            {% else %}
+                <li class="CategoryItem"><a href="{{ item.get_absolute_url }}">{{item.name}}</a></li>
+    {% endif %}
+    {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}

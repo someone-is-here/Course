@@ -1,0 +1,66 @@
+{% extends 'testdb/base2.html' %}
+{% block title %}Selected_course{% endblock %}
+<!--{% block main_title %}Courses{% endblock %}-->
+<!--{% block sub_title %}Courses about{% endblock %}-->
+{% block content %}
+<div style="text-align:center;">
+    <table>
+        <tr>
+            <th>Category</th>
+             <td>{{course_info.category}}</td>
+        </tr>
+         <tr>
+            <th>Title</th>
+             <td>{% if course_info.icon %}
+                <img src="{{course_info.icon.url}}"/>
+            {% endif %}{{course_info.title}}</td>
+        </tr>
+         <tr>
+            <th>Description</th>
+             <td>{{course_info.description}}</td>
+        </tr>
+        {% if study_material %}
+        <tr>
+            <th>StudyMaterials</th>
+            <td>
+            {% for item in study_material %}
+                <p><a href="{% url 'display_study_material' item.pk %}">{{item.title}}</a></p>
+            {% endfor %}
+            </td>
+        </tr>
+        {% endif %}
+        {% if task %}
+        <tr>
+            <th>Task</th>
+            <td>
+            {% for item in task %}
+                <p><a href="{% url 'display_task' item.pk %}">{{item.title}}</a></p>
+            {% endfor %}
+            </td>
+        </tr>
+        {% endif %}
+        {% if test %}
+        <tr>
+            <th>Test</th>
+            <td>
+            {% for item in test %}
+                {% if not teacher and item.score > 0 %}
+                    <p><a href="{% url 'display_test' item.pk %}">{{item.title}}</a></p>
+                {% elif teacher %}
+                    <p><a href="{% url 'display_test' item.pk %}">{{item.title}}</a></p>
+                {% endif %}
+            {% endfor %}
+            </td>
+        </tr>
+        {% endif %}
+    </table>
+    {% if teacher %}
+        <button class="Text-style" id="AddStudyMaterial"><a href="{% url 'new_study_material' course_info.pk %}" class="AStyle">Add Study Material</a></button>
+        <button class="Text-style" id="AddTask"><a href="{% url 'new_task' course_info.pk %}" class="AStyle">Add Task</a></button>
+        <button class="Text-style" id="AddTest"><a href="{% url 'new_test' course_info.pk %}" class="AStyle">Add Test</a></button>
+    {% endif %}
+    <table style="border:None;">
+        <th style="border:None;"><a href="{% url 'course'%}">Back</a></th>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'testdb/base2.html' %}
+{% block title %}Category{% endblock %}
+
+{% block content %}
+<div style="text-align:center;">
+    {% if course %}
+    <table>
+        <tr>
+            <th>Course names</th>
+            <th>Tasks</th>
+            <th>Tests</th>
+        </tr>
+        {% for item in course %}
+         <tr>
+             <td>
+                 <a href="{{item.link}}">{{item.name}}</a>
+             </td>
+             <td>
+              {% if item.tasks %}
+                {% for tsk in item.tasks %}
+                    {% if tsk.task_result%}
+                        <p style="background:rgba(104, 106, 217, 0.5)" title="{{tsk.task_content}}">
+                            {{tsk.task_result}}/{{tsk.task_content.mark}}
+                        </p>
+                    {% else %}
+                        <p title="{{tsk.task_content}}">-/{{tsk.task_content.mark}}</p>
+                    {% endif %}
+                {% endfor %}
+             {% endif %}
+             </td>
+             <td>
+             {% if item.tests %}
+              {% for tst in item.tests %}
+                 {% if tst.test_result or tst.test_result == 0 %}
+                        <p style="background:rgba(104, 106, 217, 0.5)" title="{{tst.test_content.title}}">
+                            {{tst.test_result}}/{{tst.test_content.score}}
+                        </p>
+                    {% elif tst %}
+                        <p title="{{tst.test_content.title}}">-/{{tst.test_content.score}}</p>
+                    {% endif %}
+                          {% endfor %}
+             {% endif %}
+             </td>
+         </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+<script>
+</script>
+{% endblock %}

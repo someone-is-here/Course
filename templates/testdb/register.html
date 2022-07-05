@@ -1,0 +1,14 @@
+{% extends 'testdb/base2.html' %}
+{% block title %}Create account{% endblock %}
+{% block content %}
+<table style="text-align:left;">
+    <td>
+    <h2>Create Account</h2>
+     <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+         <p style="text-align:center;"><button type="submit">Registrate</button></p>
+    </form>
+    </td>
+</table>
+{% endblock %}

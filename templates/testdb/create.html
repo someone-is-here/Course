@@ -1,0 +1,22 @@
+{% extends 'testdb/base2.html' %}
+{% block title %}Add{% endblock %}
+{% block content %}
+<table>
+    <td>
+    <h2>{{title}}</h2>
+    {% if course_id %}
+     <form action="{% url my_url course_id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+         <button type="submit">Create</button>
+    </form>
+     {% else %}
+     <form action="{% url my_url %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+         <button type="submit">Create</button>
+    </form>
+    {% endif %}
+    </td>
+</table>
+{% endblock %}

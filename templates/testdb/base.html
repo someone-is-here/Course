@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Main Page{% endblock %}</title>
+    <link type="text/css" href="{% static 'testdb/css/style.css' %}" rel="stylesheet"/>
+    <link rel="shortcut icon" href="{% static 'testdb/images/Icon.png' %}" type="image/x-icon">
+    {% block links %}
+    {% endblock %}
+</head>
+  <body>
+    <header><div class="HeaderDiv Text-style"><img src="{% static 'testdb/images/Icon.png' %}" class='Emblem'/>Learning Style</div>
+            <br>
+        <div><ul class="MenuBar">
+        {% block menu %}
+{% for item in menu %}
+            <li class="liForMenu"><a href="{% url item.url_name %}">{{item.title}}</a></li>
+    {% endfor %}
+            {% if request.user.is_authenticated %}
+             <li class="liForMenu">{{user.username}} | <a href="{% url 'logout' %}">Log out</a></li>
+            {% else %}
+             <li class="liForMenu"><a href="{% url 'register' %}">Register</a> | <a href="{% url 'login' %}">Log in</a></li>
+            {% endif %}
+{% endblock %}
+
+      </ul></div>
+    </header>
+    <div class="MainBackground">
+            {% block category %}
+
+            {% endblock %}
+
+            {% block content %}
+
+            {% endblock %}
+    </div>
+    <footer>
+    <div class="HeaderDiv Text-style"><img src="{% static 'testdb/images/Icon.png' %}" class='Emblem'/>Learning Style</div>
+    <div>
+       <ul>
+          <li class='liForFooter'>Company
+            <ul style="display:inline">
+              <li class='liForFooterUl'>About us</li>
+              <li class='liForFooterUl'>Vacancies</li>
+              <li class='liForFooterUl'>For the Record</li>
+              </ul>
+          </li>
+          <li class='liForFooter'>Useful links
+             <ul style="display:inline">
+              <li class='liForFooterUl'>For performers</li>
+              <li class='liForFooterUl'>For developers</li>
+              <li class='liForFooterUl'>Advertising</li>
+              <li class='liForFooterUl'>For investors</li>
+              <li class='liForFooterUl'>For vendors</li>
+              </ul>
+          </li>
+          <li class='liForFooter'>Communities
+             <ul style="display:inline">
+              <li class='liForFooterUl'>Reference</li>
+              <li class='liForFooterUl'>Free<br>mobile<br>app</li>
+              </ul>
+          </li>
+       </ul>
+    </div>
+    <div>
+     <img src="{% static 'testdb/images/faceb.png' %}" alt="error" class="SocialNetwork"/>
+     <img src="{% static 'testdb/images/tweeter.png' %}" alt="error" class="SocialNetwork"/>
+     <img src="{% static 'testdb/images/inst.png' %}" alt="error" class="SocialNetwork"/>
+     </div>
+    </footer>
+
+    <script src="{% static 'testdb/js/script.js' %}"></script>
+  </body>
+</html>
