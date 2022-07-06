@@ -53,7 +53,7 @@ class AddTaskForm(forms.ModelForm):
 class AddStudyMaterialForm(forms.ModelForm):
     class Meta:
         model = StudyMaterial
-        fields = ['title', 'description', 'material', 'picture']
+        fields = ['title', 'description', 'material', 'picture', 'files']
 
 
 class AddCourseTestForm(forms.ModelForm):

@@ -18,6 +18,11 @@
             <th>Material</th>
             <td>{{study_material_info.material}}</td>
         </tr>
+            <tr>
+            <th>Files with materials</th>
+             <td>
+   <a href="{{study_material_info.files.url}}" download="{{study_material_info.title}}">Download Material</a></td>
+        </tr>
         {% if study_material_info.picture %}
         <td colspan="2">
              <img src="{{study_material_info.picture.url}}" class="ImageAbout" style="border-radius:0"/>

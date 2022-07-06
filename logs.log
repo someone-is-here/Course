@@ -1557,3 +1557,67 @@
 2022-07-05 14:58:45,255 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
 2022-07-05 14:58:48,312 - INFO - views - views.py - Query, class: CourseList
 2022-07-05 14:58:48,361 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 16:19:16,925 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 16:19:16,925 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-06 16:19:23,099 - INFO - views - views.py - Query, class: CourseList
+2022-07-06 16:19:23,116 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 16:21:32,657 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 16:21:32,658 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-06 17:57:18,342 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 17:57:18,342 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-06 17:57:20,146 - INFO - views - views.py - Query, class: CourseList
+2022-07-06 17:57:20,164 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 17:57:22,363 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 17:57:22,365 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-06 17:57:23,968 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 17:57:25,939 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 17:57:38,630 - INFO - views - views.py - Study material updated successfully. class: UpdateStudyMaterial
+2022-07-06 17:57:38,685 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 17:59:58,825 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:00:20,405 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:00:52,154 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:00:52,932 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:00:58,980 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:00:59,954 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:01:02,920 - INFO - views - views.py - Study material updated successfully. class: UpdateStudyMaterial
+2022-07-06 18:01:02,960 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:01:32,516 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:01:50,709 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:02:42,337 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:03:03,117 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:06:49,124 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:07:01,777 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:07:02,291 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:08:41,067 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:09:11,481 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:11:22,929 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:11:37,057 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:12:25,777 - INFO - views - views.py - Study material updated successfully. class: UpdateStudyMaterial
+2022-07-06 18:12:25,835 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:13:43,311 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:14:11,812 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:14:13,652 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:14:49,060 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:16:21,905 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:16:35,882 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:17:38,410 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:17:41,154 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:17:58,506 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:19:29,023 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:20:45,690 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:21:13,615 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:21:27,118 - INFO - views - views.py - Study material updated successfully. class: UpdateStudyMaterial
+2022-07-06 18:21:27,151 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:23:12,725 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:23:56,357 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:24:00,727 - INFO - views - views.py - Query, class: CourseList
+2022-07-06 18:24:00,741 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:26:07,411 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:26:07,414 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-06 18:26:09,569 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:26:20,226 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:26:20,227 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-06 18:26:24,481 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:26:26,182 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-06 18:26:37,428 - INFO - views - views.py - Study material updated successfully. class: UpdateStudyMaterial
+2022-07-06 18:26:37,481 - INFO - utils - utils.py - get_context. class: DataMixin

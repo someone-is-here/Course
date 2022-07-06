@@ -39,6 +39,7 @@ urlpatterns = [
     path('deleteTest/<int:test_id>/', DeleteTest.as_view(), name='delete_test'),
     path('createQuestion/<int:test_id>/', CreateQuestion.as_view(), name='new_question'),
     path('updateQuestion/<int:test_id>/<int:question_id>/', UpdateQuestion.as_view(), name='update_question'),
+    path('download/', views.download_file),
 ]
 
 

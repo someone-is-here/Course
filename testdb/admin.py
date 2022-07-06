@@ -19,14 +19,14 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class StudyMaterialAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'description')
-    list_display_links = ('id', 'title', 'description')
+    list_display = ('id', 'title', 'description', 'picture', 'files')
+    list_display_links = ('id', 'title', 'description', 'picture', 'files')
     search_fields = ('title',)
 
 
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'task', 'result', 'mark')
-    list_display_links = ('id', 'title', 'task', 'result', 'mark')
+    list_display = ('id', 'title', 'task', 'picture', 'result', 'mark')
+    list_display_links = ('id', 'title', 'task', 'picture', 'result', 'mark')
     search_fields = ('title',)
 
 

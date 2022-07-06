@@ -47,8 +47,9 @@ class StudyMaterial(models.Model):
     description = models.CharField(max_length=500)
     picture = models.ImageField(upload_to="icons/study_materials_pictures/%Y/%m/%d/", blank=True, null=True)
     material = models.TextField()
+    files = models.FileField(upload_to="files/study_materials/", blank=True, null=True)
 
-    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name_plural = 'All materials'
@@ -69,7 +70,7 @@ class Task(models.Model):
     result = models.TextField()
     mark = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(1)])
 
-    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name_plural = 'Tasks'
@@ -86,7 +87,7 @@ class Task(models.Model):
 class CourseTest(models.Model):
     title = models.CharField(max_length=100)
     score = models.IntegerField(default=0)
-    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.title
@@ -98,18 +99,18 @@ class CourseTest(models.Model):
 class JournalTest(models.Model):
     student = models.ForeignKey(User, on_delete=models.CASCADE)
     mark = models.IntegerField(default=0, validators=[MinValueValidator(0)])
-    test = models.ForeignKey(CourseTest, on_delete=models.DO_NOTHING)
+    test = models.ForeignKey(CourseTest, on_delete=models.CASCADE)
 
 
 class JournalTask(models.Model):
     student = models.ForeignKey(User, on_delete=models.CASCADE)
     mark = models.IntegerField(default=0, validators=[MinValueValidator(0)])
-    task = models.ForeignKey(Task, on_delete=models.DO_NOTHING)
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
 
 
 class TestQuestion(models.Model):
     question = models.CharField(max_length=200)
-    test = models.ForeignKey(CourseTest, on_delete=models.SET_NULL, null=True)
+    test = models.ForeignKey(CourseTest, on_delete=models.CASCADE, null=True)
     score = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(1)], default=1)
     test_picture = models.ImageField(upload_to="icons/test_pictures/%Y/%m/%d/", blank=True, null=True)
 
