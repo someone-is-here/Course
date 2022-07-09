@@ -438,6 +438,7 @@ def save_user(form):
 
     if role == 'Teacher':
         res.user.is_superuser = True
+        res.user.is_staff = True
     else:
         res.user.is_superuser = False
         res.user.is_staff = False
