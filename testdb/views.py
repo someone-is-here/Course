@@ -172,7 +172,8 @@ class DisplayTask(TemplateView):
 
         self.my_context['task_info'] = Task.objects.get(pk=self.kwargs['task_id'])
 
-        if JournalTask.objects.filter(task=Task.objects.get(pk=self.kwargs['task_id'])).exists():
+        if JournalTask.objects.filter(task=Task.objects.get(pk=self.kwargs['task_id']),
+                                      student=context2['my_user']).exists():
             self.my_context['message'] = "Task already solved!"
 
         logger.info(f'Load task_info from db, is_solved from journal_task. class: DisplayTask')
@@ -194,8 +195,11 @@ class DisplayTask(TemplateView):
 
         if task_res.result == data['answer']:
             self.my_context['message'] = "Right! Excellent job!"
-            if not JournalTask.objects.filter(task=Task.objects.get(pk=task_id)).exists():
-                JournalTask.objects.create(student=self.request.user, mark=task_res.mark, task=Task.objects.get(pk=task_id))
+            if not JournalTask.objects.filter(task=Task.objects.get(pk=task_id),
+                                              student=self.request.user).exists():
+                JournalTask.objects.create(student=self.request.user,
+                                           mark=task_res.mark,
+                                           task=Task.objects.get(pk=task_id))
         else:
             self.my_context['message'] = "Wrong answer! Try again!"
         self.my_context['task_info'] = Task.objects.get(pk=task_id)
@@ -248,22 +252,20 @@ class DeleteTask(LoginRequiredMixin, DeleteView):
 
 def download_file(request, filename=''):
     if filename != '':
-        # Define Django project base directory
         BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        # Define the full file path
         filepath = BASE_DIR + '/filedownload/Files/' + filename
-        # Open the file for reading content
+
         path = open(filepath, 'rb')
-        # Set the mime type
+
         mime_type, _ = mimetypes.guess_type(filepath)
-        # Set the return value of the HttpResponse
         response = HttpResponse(path, content_type=mime_type)
-        # Set the HTTP header for sending to browser
+
         response['Content-Disposition'] = "attachment; filename=%s" % filename
-        # Return the response value
+
+        logger.info('download_file, successfully attached')
+
         return response
     else:
-        # Load the template
         return render(request, 'file.html')
 
 
@@ -416,22 +418,36 @@ class RegisterRoles(DataMixin, CreateView):
         return dict(list(context2.items()) + list(context.items()))
 
     def form_valid(self, form):
-        form.save()
-
+        save_user(form)
         logger.info('Redirect to rolesAdmin, class: RegisterRoles')
 
         return redirect('rolesAdmin')
 
     def form_invalid(self, form):
-        role = form['role'].value()
-        user = form['user'].value()
-        res = MyAdmin.objects.select_related('user').filter(user=user).get()
-        res.role = role
-        res.save()
-
+        save_user(form)
         logger.info('Update role. Redirect to rolesAdmin, class: RegisterRoles')
 
         return redirect('rolesAdmin')
+
+
+def save_user(form):
+    role = form['role'].value()
+    user = form['user'].value()
+
+    res = MyAdmin.objects.select_related('user').filter(user=user).get()
+
+    if role == 'Teacher':
+        res.user.is_superuser = True
+    else:
+        res.user.is_superuser = False
+        res.user.is_staff = False
+
+    res.role = role
+
+    res.user.save()
+    res.save()
+
+    return
 
 
 class CreateTest(LoginRequiredMixin, CreateView):
@@ -515,7 +531,8 @@ class DisplayTest(TemplateView):
             item = query_set_test[i]
             context2['quest_ans'][i]['answers'] = list(TestAnswer.objects.filter(question_id=item.pk))
 
-        if JournalTest.objects.filter(test=CourseTest.objects.get(pk=self.kwargs['test_id'])).exists():
+        if JournalTest.objects.filter(test=CourseTest.objects.get(pk=self.kwargs['test_id']),
+                                      student=context2['my_user']).exists():
             context2['message'] = "Test already solved!"
 
         self.my_context = dict(list(context2.items()) + list(context.items()))
@@ -566,13 +583,21 @@ class DisplayTest(TemplateView):
                     score_res += query_set_test[k].score
             k += 1
 
-        if JournalTest.objects.filter(test=CourseTest.objects.get(pk=self.kwargs['test_id'])).exists():
+        if JournalTest.objects.filter(test=CourseTest.objects.get(pk=self.kwargs['test_id']),
+                                      student=self.request.user).exists():
+            previous_results = JournalTest.objects.filter(test=CourseTest.objects.get(pk=self.kwargs['test_id'])).get()
+            previous_results.number_of_attempts += 1
+            previous_results.best_score = max(score_res, previous_results.best_score)
+            previous_results.save()
+
             self.my_context['message'] = f"Test already solved! Your result is {score_res}/" \
                                          f"{CourseTest.objects.get(pk=self.kwargs['test_id']).score}!"
 
-        if not JournalTest.objects.filter(test=CourseTest.objects.get(pk=test_id)).exists():
+        if not JournalTest.objects.filter(test=CourseTest.objects.get(pk=test_id),
+                                          student=self.request.user).exists():
             JournalTest.objects.create(student=self.request.user, mark=score_res,
-                                       test=CourseTest.objects.get(pk=test_id))
+                                       test=CourseTest.objects.get(pk=test_id), best_score=score_res,
+                                       number_of_attempts=1)
             self.my_context['message'] = f"Excellent job!\nYour result is {score_res}/" \
                                          f"{CourseTest.objects.get(pk=self.kwargs['test_id']).score}"
 
@@ -761,7 +786,7 @@ class UpdateQuestion(TemplateView):
                             ans.save()
                         else:
                             ans.delete()
-                    else:
+                    elif len(str(form.instance.answer)) > 0:
                         TestAnswer.objects.create(answer=form.instance.answer,
                                                   is_right=form.instance.is_right,
                                                   question=test_question)

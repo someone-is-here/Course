@@ -52,7 +52,9 @@
              {% for item in quest_ans %}
                 <p class="Question">{{item.questions}}</p>
                 {% if item.questions.test_picture %}
+                <div>
                     <img src="{{item.questions.test_picture.url}}" class="QuestionPicture"/>
+                </div>
                 {% endif %}
                 <table>
                       <tr>

@@ -333,6 +333,7 @@ nav{
     all: revert;
 }
 .QuestionPicture{
-    height: 10%;
-    width: 10%;
+    height: 30%;
+    width: 50%;
+    border-radius: 0;
 }

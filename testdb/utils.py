@@ -24,6 +24,7 @@ class DataMixin:
 
     def get_user_context(self, **kwargs):
         context = kwargs
+        context['my_user'] = self.request.user
 
         if self.request.user.is_authenticated and MyAdmin.objects.get(user=self.request.user).role == 'Teacher':
             context['menu'] = teachers_menu

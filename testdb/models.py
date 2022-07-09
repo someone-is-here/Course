@@ -100,6 +100,8 @@ class JournalTest(models.Model):
     student = models.ForeignKey(User, on_delete=models.CASCADE)
     mark = models.IntegerField(default=0, validators=[MinValueValidator(0)])
     test = models.ForeignKey(CourseTest, on_delete=models.CASCADE)
+    number_of_attempts = models.IntegerField(default=0, validators=[MinValueValidator(0)])
+    best_score = models.IntegerField(validators=[MinValueValidator(0)], null=True)
 
 
 class JournalTask(models.Model):

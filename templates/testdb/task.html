@@ -44,6 +44,11 @@
         <div class="Question">
         <p>{{task_info.task}}(Max_score:{{task_info.mark}})</p>
         </div>
+         {% if task_info.picture %}
+         <div>
+                 <img src="{{task_info.picture.url}}" class="ImageAbout" style="border-radius:0"/>
+         </div>
+        {% endif %}
          <label for="answer">Your answer: </label>
         <input id="answer" type="text" name="answer" minlength="1" required>
          <br>

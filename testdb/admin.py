@@ -32,7 +32,7 @@ class TaskAdmin(admin.ModelAdmin):
 
 class TestAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'score', 'course')
-    list_display_links = ('id', 'title', 'score','course')
+    list_display_links = ('id', 'title', 'score', 'course')
     search_fields = ('title',)
 
 
@@ -46,21 +46,28 @@ class TestAnswersAdmin(admin.ModelAdmin):
     list_display = ('id', 'answer', 'is_right', 'question')
     list_display_links = ('id', 'answer', 'is_right', 'question')
     search_fields = ('title',)
+    list_filter = ('is_right', 'question')
 
 
 class JournalTestAdmin(admin.ModelAdmin):
-    list_display = ('id', 'student', 'mark', 'test')
-    list_display_links = ('id', 'student', 'mark', 'test')
+    list_display = ('id', 'student', 'mark', 'test', 'number_of_attempts', 'best_score')
+    list_display_links = ('id', 'student', 'mark', 'test', 'number_of_attempts', 'best_score')
+    search_fields = ('student', 'test')
+    list_filter = ('test',)
 
 
 class JournalTaskAdmin(admin.ModelAdmin):
     list_display = ('id', 'student', 'mark', 'task')
     list_display_links = ('id', 'student', 'mark', 'task')
+    search_fields = ('student', 'task')
+    list_filter = ('task',)
 
 
 class MyAdminAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'role')
     list_display_links = ('id', 'user', 'role')
+    search_fields = ('student',)
+    list_filter = ('role',)
 
 
 admin.site.register(Course, CourseAdmin)
