@@ -1,6 +1,5 @@
 from django.test import TestCase
 from testdb.forms import *
-from django.contrib.auth.models import User
 
 
 class TestForms(TestCase):
@@ -71,6 +70,97 @@ class TestForms(TestCase):
 
     def test_form_category_course_invalid(self):
         form = AddCategoryForm(data={})
+
+        self.assertFalse(form.is_valid())
+        self.assertEquals(len(form.errors), 1)
+
+    def test_form_add_study_material_valid(self):
+        form = AddStudyMaterialForm(data={
+            'title': 'Study material',
+            'description': 'My study material',
+            'material': 'Useful information',
+        })
+
+        self.assertTrue(form.is_valid())
+
+    def test_form_add_study_material_invalid(self):
+        form = AddStudyMaterialForm(data={})
+
+        self.assertFalse(form.is_valid())
+        self.assertEquals(len(form.errors), 3)
+
+    def test_form_add_task(self):
+        form = AddTaskForm(data={
+            'title': 'Solve the task',
+            'task': '3*7',
+            'result': '21',
+            'mark': '1'
+        })
+
+        self.assertTrue(form.is_valid())
+
+    def test_form_add_task_invalid(self):
+        form = AddTaskForm(data={
+            'title': 'Solve the task',
+            'task': '3*7',
+            'result': '21',
+            'mark': '-1'})
+
+        self.assertFalse(form.is_valid())
+        self.assertEquals(len(form.errors), 1)
+
+    def test_form_add_task_invalid_all(self):
+        form = AddTaskForm(data={})
+
+        self.assertFalse(form.is_valid())
+        self.assertEquals(len(form.errors), 4)
+
+    def test_form_add_test(self):
+        form = AddCourseTestForm(data={
+            'title': 'Result test'
+        })
+
+        self.assertTrue(form.is_valid())
+
+    def test_form_add_test_invalid(self):
+        form = AddCourseTestForm(data={})
+
+        self.assertFalse(form.is_valid())
+        self.assertEquals(len(form.errors), 1)
+
+    def test_form_add_test_question(self):
+        form = AddTestQuestionForm(data={
+            'question': 'How many days are in week?',
+            'score': 1,
+        })
+
+        self.assertTrue(form.is_valid())
+
+    def test_form_add_test_question_invalid(self):
+        form = AddTestQuestionForm(data={
+            'question': 'How many days are in week?',
+            'score': -45,
+        })
+
+        self.assertFalse(form.is_valid())
+        self.assertEquals(len(form.errors), 1)
+
+    def test_form_add_test_question_invalid_all(self):
+        form = AddTestQuestionForm(data={})
+
+        self.assertFalse(form.is_valid())
+        self.assertEquals(len(form.errors), 2)
+
+    def test_form_add_test_answers(self):
+        form = AddTestAnswerForm(data={
+            'answer': '7',
+            'is_right': True,
+        })
+
+        self.assertTrue(form.is_valid())
+
+    def test_form_add_test_answers_invalid(self):
+        form = AddTestAnswerForm(data={})
 
         self.assertFalse(form.is_valid())
         self.assertEquals(len(form.errors), 1)

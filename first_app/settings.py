@@ -93,7 +93,7 @@ LOGGING = {
     },
     'loggers': {
         'main': {
-            'handlers': ['console', 'file'],
+            'handlers': ['file'],
             'level': 'INFO',
             'propagate': True
         },

@@ -1,0 +1,339 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+    overflow: scroll;
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+    width: 0;
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: #FF0000;
+}
+
+header{
+  display: flex;
+  flex-wrap: wrap;
+  background: black;
+  color: rgb(3, 245, 3);
+  font-size: 40px;
+  text-shadow: 2px 2px 2px rgb(7, 19, 197);
+  letter-spacing: .2rem;
+}
+
+.HeaderDiv{
+  padding:20px 0px 10px 20px;
+}
+
+button {
+  padding: 5px 60px;
+  font-size: 25px;
+  cursor: pointer;
+  text-align: center;
+  background: rgba(9, 187, 9, 0.836);
+  border-bottom: 2.5px solid rgb(15, 255, 7);
+  border-top: 1px solid rgb(77, 255, 7);
+  border-left: 1px solid rgb(77, 255, 7);
+  border-right: 2px solid rgb(77, 255, 7);
+  border-radius: 15px;
+  margin-top: 30px;
+  color:rgba(7, 10, 150, 0.986);
+  text-shadow: 0.5px 0.5px lime;
+  letter-spacing: .1rem;
+  box-shadow: 0px 6px rgba(7, 145, 7, 0.445);
+  transition: all .3s ease-in-out;
+}
+
+button:hover{
+  background: rgba(5, 136, 5, 0.836);
+  transform: scale(1.05);
+}
+.Text-style{
+  font-style: oblique;
+  font-weight: bold;
+}
+ul{
+  list-style-type: none;
+  background: black;
+}
+.MenuBar{
+ display: flex;
+ flex-wrap: wrap;
+}
+.liForMenu{
+  flex: auto;
+  font-size: 23px;
+  padding: 4px 9px;
+  font-weight:bold;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: all .3s ease-in-out;
+}
+.liForMenu:hover{
+   font-size: 25px;
+   transform: scale(1.05);
+}
+
+.Emblem{
+  height:50px;
+  width:50px;
+}
+.SocialNetwork{
+  height:40px;
+  width:40px;
+  margin-top:30px;
+  margin-left:15px;
+  background: rgba(0, 247, 0, 0.87);
+  border-bottom:1px solid rgb(4, 20, 163);
+  border-radius: 27px;
+}
+.SocialNetwork:hover{
+  background: white;
+  cursor: pointer;
+}
+footer{
+  display: flex;
+  flex-wrap: wrap;
+  background: black;
+  color: rgb(3, 245, 3);
+  font-size: 40px;
+  text-shadow: 2px 2px 2px rgb(7, 19, 197);
+  width:100%;
+  height:50%;
+}
+.liForFooter{
+  font-size: 20px;
+  padding: 4px 9px;
+  color:rgba(93, 211, 77, 0.651);
+  text-shadow: 2px 2px 2px rgba(7, 20, 197, 0.562);  
+  flex: auto;
+  margin-top:40px;
+  margin-left:20px;
+  float:left;
+}
+.liForFooterUl{
+  font-size: 20px;
+  padding: 6px 9px;
+  color:rgba(93, 211, 77, 0.932);
+  text-shadow: 2px 2px 2px rgba(10, 25, 238, 0.877);  
+}
+.liForFooterUl:hover{
+  color:rgb(185, 231, 183);
+  cursor: pointer;
+}
+div{
+  flex:auto;
+}
+.MainBackground{
+    position: relative;
+    background: black;
+    width: 95%;
+    height: 95%;
+    box-sizing: content-box;
+    padding: 2em;
+}
+.IndexBackground{
+    position: relative;
+    background: black;
+    width: 100%;
+    height: 800px;
+    box-sizing: content-box;
+    padding: 0;
+}
+.AboutUs{
+  margin: 10%;
+  margin-top: 7%;
+  font-size: 30px;
+  color: rgba(93, 211, 77, 0.851);
+  letter-spacing: .1rem;
+}
+.ImageAbout{
+    height: 20%;
+    width: 20%;
+}
+.Quote{
+  font-size: 50px;
+  color:rgba(21, 243, 14, 0.986);
+  text-shadow: 2px 2px rgb(81, 11, 245);
+  letter-spacing: .1rem;
+  padding-top:200px;
+  text-align:center;
+}
+.ButtonMain{
+  text-align:center;
+}
+
+#canvas1 {
+  position: absolute;
+  background: black;
+  width: 100%;
+  height: 800px;
+}
+
+table{
+  width: 100%;
+  margin-top: 40px;
+  border:1px solid lime;
+  color: rgb(3, 245, 3);
+  font-size: 25px;
+  letter-spacing: .2rem;
+  text-align: center;
+  padding: 5px;
+}
+td{
+    border:1px solid lime;
+    font-size: 22.5px;
+    color: rgb(102, 255, 102, 0.5);
+    padding: 10px;
+    transition: all .3s ease-in-out;
+}
+th{
+    border:1px solid lime;
+    padding: 15px;
+    color: rgb(102, 255, 102, 0.8);
+}
+td:hover{
+  color: rgb(102, 255, 102, 0.9);
+  transform: scale(1.02);
+}
+body{
+  background: black;
+}
+a{
+  color: rgb(102, 255, 102, 0.8);
+  text-decoration:none;
+}
+img{
+    height: 50px;
+    width: 50px;
+    border-radius:5em;
+}
+.CategoriesList{
+    display:flex;
+    flex-wrap: wrap;
+}
+.CategoryItem{
+  flex: auto;
+  background: rgba(9, 187, 9, 0.506);
+  border-top:2px solid rgb(77, 255, 7);
+  font-size: 23px;
+  padding: 4px 9px;
+  text-align: center;
+  color:rgba(7, 10, 150, 0.986);
+  text-shadow: 2px 2px 2px rgb(7 19 197);
+  letter-spacing: .2rem;
+  cursor: pointer;
+}
+.CategoryItem:hover{
+  background: rgba(5, 136, 5, 0.836);
+}
+h2{
+  color: rgb(3, 245, 3);
+  font-size: 30px;
+  text-shadow: 1px 1px 1px rgb(7 19 197);
+  letter-spacing: .2rem;
+}
+label{
+    margin: 30px;
+    padding: 20px;
+    font-size: 24px;
+    color: rgb(102, 255, 102, 0.8);
+    letter-spacing: .2rem;
+}
+input, select, textarea{
+    margin: 20px;
+    padding: 0.5em;
+    height: 70px;
+    font-size: 24px;
+    background: rgba(5, 136, 5, 0.536);
+    border-radius:1em;
+    overflow: auto;
+}
+nav{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+.liPage{
+    width: 40px;
+    height: 40px;
+    float: left;
+    background: rgba(5, 136, 5, 0.536);
+    color: rgb(102, 255, 102, 0.8);
+    font-size: 24px;
+    padding: 0.5em;
+    border-top: 2.5px solid rgb(15, 255, 7);
+    text-shadow: 2px 2px 2px rgb(7 19 197);
+    transition: all .3s ease-in-out;
+}
+.liPageItem{
+    height: 40px;
+    float: left;
+    background: black;
+    color: rgb(102, 255, 102, 0.8);
+    font-size: 24px;
+    padding: 0.5em;
+    text-shadow: 2px 2px 2px rgb(7 19 197);
+    border-top: 2.5px solid rgb(15, 255, 7);
+}
+.liPage:hover{
+  color: rgb(102, 255, 102, 0.8);
+  transform: scale(1.05);
+}
+.liPageSelected{
+    width: 40px;
+    height: 40px;
+    float: left;
+    background: black;
+    color: rgb(102, 255, 102, 0.8);
+    font-size: 24px;
+    padding: 0.5em;
+    border-top: 2.5px solid rgb(15, 255, 7);
+    text-shadow: 2px 2px 2px rgb(7 19 197);
+    transition: all .3s ease-in-out;
+}
+.AStyle{
+    font-weight: normal;
+    color: rgb(102, 255, 102, 0.8);
+    font-size: 24px;
+    padding: 0.5em;
+    text-shadow: 2px 2px 2px rgb(7 19 197);
+}
+
+.Link:hover{
+    color: rgb(102, 255, 102, 1);
+    text-shadow: 1px 1px 1px rgb(7 19 197);
+}
+
+.Question{
+    margin: 2%;
+    margin-bottom: 0;
+    padding: 0.5em;
+    letter-spacing: .2rem;
+    font-size: 35px;
+    color: rgb(102, 255, 102, 0.8);
+}
+.Message{
+  font-size: 50px;
+  color:rgba(21, 243, 14, 0.986);
+  text-shadow: 2px 2px rgb(81, 11, 245);
+  letter-spacing: .1rem;
+  padding: 3%;
+  text-align:center;
+  border: 1px solid lime;
+  text-align:center;
+}
+.remove-all-styles{
+    all: revert;
+}
+.QuestionPicture{
+    height: 30%;
+    width: 50%;
+    border-radius: 0;
+}

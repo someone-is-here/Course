@@ -1,4 +1,3 @@
-import asyncio.coroutines
 import mimetypes
 import os
 
@@ -13,8 +12,6 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth import logout, login
 import logging
 from django.db.models import Sum
-from django.utils.decorators import classonlymethod
-from asgiref.sync import sync_to_async
 
 logger = logging.getLogger('main')
 
@@ -434,7 +431,10 @@ def save_user(form):
     role = form['role'].value()
     user = form['user'].value()
 
-    res = MyAdmin.objects.select_related('user').filter(user=user).get()
+    if MyAdmin.objects.filter(user=user).exists():
+        res = MyAdmin.objects.filter(user=user).get()
+    else:
+        res = MyAdmin.objects.create(role=role, user=User.objects.get(id=user))
 
     if role == 'Teacher':
         res.user.is_superuser = True
@@ -628,13 +628,13 @@ class DeleteTest(LoginRequiredMixin, DeleteView):
         return reverse('course', args=[test.course.id])
 
 
-async def page_not_found_view(request, exception):
+def page_not_found_view(request, exception):
     logger.error("Page not found. Error 404")
 
     return render(request, 'testdb/404.html', status=404)
 
 
-async def page405(request, exception):
+def page405(request, exception):
     logger.error("Page not found. Error 405")
 
     return render(request, 'testdb/405.html', status=405)
