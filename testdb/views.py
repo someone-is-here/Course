@@ -586,7 +586,8 @@ class DisplayTest(TemplateView):
 
         if JournalTest.objects.filter(test=CourseTest.objects.get(pk=self.kwargs['test_id']),
                                       student=self.request.user).exists():
-            previous_results = JournalTest.objects.filter(test=CourseTest.objects.get(pk=self.kwargs['test_id'])).get()
+            previous_results = JournalTest.objects.filter(test=CourseTest.objects.get(pk=self.kwargs['test_id']),
+                                                          student=self.request.user).get()
             previous_results.number_of_attempts += 1
             previous_results.best_score = max(score_res, previous_results.best_score)
             previous_results.save()
