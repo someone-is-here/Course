@@ -29,7 +29,6 @@ SECRET_KEY = 'django-insecure-_z!2^pjj&a=bx55_^7p%=3w09bozy2-qlq0mbydrsua-+b+!er
 DEBUG = True
 ALLOWED_HOSTS = [] # for docker compose '0.0.0.0'
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,12 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'testdb.apps.TestdbConfig'
+    'testdb.apps.TestdbConfig',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
