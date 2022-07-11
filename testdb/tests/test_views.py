@@ -1,11 +1,12 @@
+from django.core.files import File
+from pathlib import Path
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.shortcuts import HttpResponse
 from testdb.models import *
 from testdb.views import *
-import datetime
+from django.conf import settings
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
 import json
 
 
@@ -173,12 +174,15 @@ class TestViews(TestCase):
         Course.objects.create(title='myCourse', description='Strange', category=my_category)
         course = Course.objects.get(title='myCourse')
 
-        response = self.client.post(f'/createStudyMaterial/{course.id}/', {
-            'title': 'myStudyMaterial',
-            'description': 'MyStudyMaterialDescription',
-            'material': 'Something important',
-            'picture': '/home/tanusha/Documents/Python_Labs_2-/python_lab3/first_app/htmlcov/favicon_32.png'
-        })
+        path = Path('/home/tanusha/Documents/Python_Labs_2-/python_lab3/first_app/htmlcov/index.html')
+
+        with path.open(mode='rb') as f:
+            response = self.client.post(f'/createStudyMaterial/{course.id}/', {
+                'title': 'myStudyMaterial',
+                'description': 'MyStudyMaterialDescription',
+                'material': 'Something important',
+                'files': File(f, name=path.name)
+            })
 
         study_material = StudyMaterial.objects.get(title='myStudyMaterial')
 
@@ -271,6 +275,9 @@ class TestViews(TestCase):
             'mark': '3'
         })
 
+        task1 = Task.objects.create(title='myTask1', task='3*9', result='27', mark=2)
+        task1.save()
+
         updated_task = Task.objects.get(title='myTask')
         self.assertEquals(updated_task.mark, 3)
         self.assertEquals(response.status_code, 302)
@@ -301,6 +308,9 @@ class TestViews(TestCase):
         })
         self.assertEquals(response.status_code, 200)
 
+        response = self.client.get(reverse('journal'))
+        self.assertEquals(response.status_code, 200)
+
         response = self.client.post('/login/', info)
         self.assertEquals(response.status_code, 302)
 
@@ -312,7 +322,7 @@ class TestViews(TestCase):
             'id': 1
         }))
 
-        self.assertEquals(Task.objects.count(), 0)
+        self.assertEquals(Task.objects.count(), 1)
         self.assertEquals(response.status_code, 302)
 
     def test_test(self):
@@ -369,8 +379,119 @@ class TestViews(TestCase):
         self.assertEquals(updated_test.title, 'MyNewTest')
         self.assertEquals(response.status_code, 302)
 
-        # response = self.client.post('/login/', info)
-        # self.assertEquals(response.status_code, 302)
+        url = reverse('new_question', args=[test.pk])
+
+        response = self.client.get(url)
+        self.assertEquals(response.status_code, 200)
+
+        response = self.client.post(url, {
+            'csrfmiddlewaretoken': 'JZ2OE7lGX4QMBqeSSiSEsiDTHAm0jIqbLb8QCcrJ7L4WWwFkTrOY4b98h3xqUSmP',
+            'aform_pre-question': '3+65',
+            'aform_pre-score': '1',
+            'aform_pre-test_picture': '',
+            'aform_pre': 'Submit',
+            'bform_pre-TOTAL_FORMS': '4',
+            'bform_pre-INITIAL_FORMS': '0',
+            'bform_pre-MIN_NUM_FORMS': '0',
+            'bform_pre-MAX_NUM_FORMS': '1000',
+            'bform_pre-0-answer': '67',
+            'bform_pre-1-answer': '68',
+            'bform_pre-2-answer': '',
+            'bform_pre-3-answer': '',
+            'bform_pre': 'Submit'})
+        self.assertEquals(response.status_code, 200)
+
+        response = self.client.post(url, {'csrfmiddlewaretoken': 'JZ2OE7lGX4QMBqeSSiSEsiDTHAm0jIqbLb8QCcrJ7L4WWwFkTrOY4b98h3xqUSmP',
+                                          'aform_pre-question': '3+65',
+                                          'aform_pre-score': '1',
+                                          'aform_pre-test_picture': '',
+                                          'aform_pre': 'Submit',
+                                          'bform_pre-TOTAL_FORMS': '4',
+                                          'bform_pre-INITIAL_FORMS': '0',
+                                          'bform_pre-MIN_NUM_FORMS': '0',
+                                          'bform_pre-MAX_NUM_FORMS': '1000',
+                                          'bform_pre-0-answer': '67',
+                                          'bform_pre-1-answer': '68',
+                                          'bform_pre-1-is_right': 'on',
+                                          'bform_pre-2-answer': '',
+                                          'bform_pre-3-answer': '',
+                                          'bform_pre': 'Submit'})
+
+        self.assertEquals(TestAnswer.objects.count(), 2)
+        self.assertEquals(TestQuestion.objects.count(), 1)
+        self.assertEquals(response.status_code, 302)
+
+        url = reverse('update_question', args=[test.pk, 1])
+
+        response = self.client.get(url)
+        self.assertEquals(response.status_code, 200)
+
+        response = self.client.post(url, {
+            'csrfmiddlewaretoken': 'JZ2OE7lGX4QMBqeSSiSEsiDTHAm0jIqbLb8QCcrJ7L4WWwFkTrOY4b98h3xqUSmP',
+            'aform_pre-question': '3+65',
+            'aform_pre-score': '1',
+            'aform_pre-test_picture': '',
+            'aform_pre': 'Submit',
+            'bform_pre-TOTAL_FORMS': '4',
+            'bform_pre-INITIAL_FORMS': '0',
+            'bform_pre-MIN_NUM_FORMS': '0',
+            'bform_pre-MAX_NUM_FORMS': '1000',
+            'bform_pre-0-answer': '',
+            'bform_pre-1-answer': '68',
+            'bform_pre-1-is_right': 'on',
+            'bform_pre-2-answer': '13',
+            'bform_pre-3-answer': '15',
+            'bform_pre': 'Submit'})
+
+        self.assertEquals(TestAnswer.objects.count(), 3)
+        self.assertEquals(TestQuestion.objects.count(), 1)
+        self.assertEquals(response.status_code, 302)
+
+        response = self.client.post(url, {
+            'csrfmiddlewaretoken': 'JZ2OE7lGX4QMBqeSSiSEsiDTHAm0jIqbLb8QCcrJ7L4WWwFkTrOY4b98h3xqUSmP',
+            'aform_pre-question': '3+65',
+            'aform_pre-score': '1',
+            'aform_pre-test_picture': '',
+            'aform_pre': 'Submit',
+            'bform_pre-TOTAL_FORMS': '4',
+            'bform_pre-INITIAL_FORMS': '0',
+            'bform_pre-MIN_NUM_FORMS': '0',
+            'bform_pre-MAX_NUM_FORMS': '1000',
+            'bform_pre-0-answer': '67',
+            'bform_pre-1-answer': '68',
+            'bform_pre-1-is_right': '',
+            'bform_pre-2-answer': '',
+            'bform_pre-3-answer': '',
+            'bform_pre': 'Submit'})
+
+        self.assertEquals(response.status_code, 200)
+
+        url = reverse('display_test', args=[test.pk])
+        response = self.client.get(url)
+        self.assertEquals(response.status_code, 200)
+
+        info1 = {'username': 'test_student', 'email': 'test_studnt@domain.com', 'password': 'testpass123'}
+        response = self.client.post('/login/', info1)
+        self.assertEquals(response.status_code, 200)
+
+        url = reverse('display_test', args=[test.pk])
+        response = self.client.get(url)
+        self.assertEquals(response.status_code, 200)
+
+        response = self.client.post(url, {
+            'csrfmiddlewaretoken': 'JZ2OE7lGX4QMBqeSSiSEsiDTHAm0jIqbLb8QCcrJ7L4WWwFkTrOY4b98h3xqUSmP',
+            '1_1': 'on'
+        })
+        self.assertEquals(response.status_code, 200)
+
+        response = self.client.post(url, {
+            'csrfmiddlewaretoken': 'JZ2OE7lGX4QMBqeSSiSEsiDTHAm0jIqbLb8QCcrJ7L4WWwFkTrOY4b98h3xqUSmP',
+            '1_0': 'on'
+        })
+        self.assertEquals(response.status_code, 200)
+
+        response = self.client.get(reverse('journal'))
+        self.assertEquals(response.status_code, 200)
 
         response = self.client.get(reverse('delete_test', args=[test.pk]))
         self.assertEquals(response.status_code, 200)
@@ -382,20 +503,6 @@ class TestViews(TestCase):
 
         self.assertEquals(CourseTest.objects.count(), 0)
         self.assertEquals(response.status_code, 302)
-
-    # def test_test_question(self):
-    #     response = self.client.get(f'/createQuestion/1/', {
-    #         'title': 'myTest',
-    #     })
-    #
-    #     test = CourseTest.objects.get(title='myTest')
-    #
-    #     self.assertEquals(test.title, 'myTest')
-    #     self.assertEquals(response.status_code, 302)
-    #
-    #     # response = self.client.post(f'/createQuestion/1/', {
-    #     #     'title': 'myTest',
-    #     # })
 
     def test_logout(self):
         response = self.client.get(reverse('logout'))
