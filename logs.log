@@ -3761,3 +3761,240 @@
 2022-07-10 18:16:14,137 - INFO - views - views.py - Test updated successfully. Redirect to display_test, class: UpdateTest
 2022-07-10 18:16:14,143 - INFO - utils - utils.py - get_context. class: DataMixin
 2022-07-10 18:16:14,149 - INFO - views - views.py - Return to course, test deleted successfully. class: DeleteTest
+2022-07-10 20:30:46,575 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:30:46,575 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-10 20:45:51,059 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:45:51,060 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-10 20:45:53,590 - INFO - views - views.py - Logout. Redirect to login, class: LogOut
+2022-07-10 20:45:53,800 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:46:02,339 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:46:02,339 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-10 20:46:25,172 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:46:25,173 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-10 20:46:27,151 - INFO - views - views.py - Query, class: CourseList
+2022-07-10 20:46:27,161 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:46:29,724 - INFO - views - views.py - Query, class: CourseList
+2022-07-10 20:46:29,741 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:46:31,447 - INFO - views - views.py - Query, class: CategoryList
+2022-07-10 20:46:31,479 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:46:33,143 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:46:33,143 - INFO - views - views.py - To about.html, class: CourseAbout
+2022-07-10 20:46:36,410 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:47:15,879 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:47:24,456 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:47:38,339 - INFO - views - views.py - Create user, class: RegisterUser
+2022-07-10 20:47:38,383 - INFO - views - views.py - Login user, class: RegisterUser
+2022-07-10 20:47:38,451 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:47:38,451 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-10 20:47:43,548 - INFO - views - views.py - Query, class: CourseList
+2022-07-10 20:47:43,571 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:47:45,160 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:47:45,163 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:47:47,772 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:11,545 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:11,549 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:48:13,691 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:13,724 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:48:13,725 - INFO - views - views.py - To testdb/task.html. class: DisplayTask
+2022-07-10 20:48:19,615 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:19,627 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:48:19,633 - INFO - views - views.py - POST from testdb/task.html. class: DisplayTask
+2022-07-10 20:48:23,623 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:23,633 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:48:25,001 - INFO - views - views.py - POST from testdb/task.html. class: DisplayTask
+2022-07-10 20:48:27,521 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:27,521 - INFO - views - views.py - To journal.html page. class: JournalView
+2022-07-10 20:48:36,170 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:36,172 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:48:38,325 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:38,329 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:48:38,330 - INFO - views - views.py - To testdb/task.html. class: DisplayTask
+2022-07-10 20:48:41,753 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:41,763 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:48:41,825 - INFO - views - views.py - POST from testdb/task.html. class: DisplayTask
+2022-07-10 20:48:44,173 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:44,174 - INFO - views - views.py - To journal.html page. class: JournalView
+2022-07-10 20:48:46,855 - INFO - views - views.py - Query, class: CourseList
+2022-07-10 20:48:46,908 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:49,355 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:49,356 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:48:50,979 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:48:51,061 - INFO - views - views.py - Get all info for displaying test. class: DisplayTest
+2022-07-10 20:48:51,062 - INFO - views - views.py - GET Render testdb/test.html, class: DisplayTest
+2022-07-10 20:49:06,747 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:49:06,794 - INFO - views - views.py - Get all info for displaying test. class: DisplayTest
+2022-07-10 20:49:06,794 - INFO - views - views.py - POST from testdb/test.html , class: DisplayTest
+2022-07-10 20:49:06,851 - INFO - views - views.py - Render_to_response to testdb/test.html , class: DisplayTest
+2022-07-10 20:49:10,436 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:49:10,437 - INFO - views - views.py - To journal.html page. class: JournalView
+2022-07-10 20:49:14,126 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:49:14,127 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:49:16,278 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:49:16,302 - INFO - views - views.py - Get all info for displaying test. class: DisplayTest
+2022-07-10 20:49:16,302 - INFO - views - views.py - GET Render testdb/test.html, class: DisplayTest
+2022-07-10 20:49:23,863 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:49:24,286 - INFO - views - views.py - Get all info for displaying test. class: DisplayTest
+2022-07-10 20:49:24,287 - INFO - views - views.py - POST from testdb/test.html , class: DisplayTest
+2022-07-10 20:49:24,331 - INFO - views - views.py - Render_to_response to testdb/test.html , class: DisplayTest
+2022-07-10 20:49:28,260 - INFO - views - views.py - Logout. Redirect to login, class: LogOut
+2022-07-10 20:49:28,302 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:49:32,417 - INFO - views - views.py - Login user. Redirect to home, class: LoginUser
+2022-07-10 20:49:32,490 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:49:32,490 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-10 20:49:38,792 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:49:40,774 - INFO - views - views.py - Logout. Redirect to login, class: LogOut
+2022-07-10 20:49:40,819 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:49:43,010 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:50:13,628 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:50:26,884 - INFO - views - views.py - Create user, class: RegisterUser
+2022-07-10 20:50:26,906 - INFO - views - views.py - Login user, class: RegisterUser
+2022-07-10 20:50:26,989 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:50:26,990 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-10 20:50:31,208 - INFO - views - views.py - Logout. Redirect to login, class: LogOut
+2022-07-10 20:50:31,228 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:50:35,177 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:50:43,061 - INFO - views - views.py - Login user. Redirect to home, class: LoginUser
+2022-07-10 20:50:43,124 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:50:43,124 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-10 20:50:45,940 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:50:52,852 - INFO - views - views.py - Update role. Redirect to rolesAdmin, class: RegisterRoles
+2022-07-10 20:50:52,887 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:50:55,575 - INFO - views - views.py - Logout. Redirect to login, class: LogOut
+2022-07-10 20:50:55,596 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:51:01,888 - INFO - views - views.py - Login user. Redirect to home, class: LoginUser
+2022-07-10 20:51:02,265 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:51:02,266 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-10 20:51:09,592 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:51:17,582 - INFO - views - views.py - Query, class: CourseList
+2022-07-10 20:51:17,629 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:51:20,673 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:51:54,954 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:51:54,955 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:51:59,709 - INFO - views - views.py - Query, class: CategoryList
+2022-07-10 20:51:59,725 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:52:02,056 - INFO - views - views.py - Query, class: CategoryList
+2022-07-10 20:52:02,106 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:52:04,549 - INFO - views - views.py - Query, class: CategoryList
+2022-07-10 20:52:04,598 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:52:06,420 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:52:06,422 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:52:08,340 - INFO - views - views.py - Query, class: CourseList
+2022-07-10 20:52:08,392 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:52:10,514 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:52:18,162 - INFO - views - views.py - Course updated successfully. class: UpdateCourse
+2022-07-10 20:52:18,221 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:52:18,223 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:52:20,674 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:52:58,864 - INFO - views - views.py - To display_study_material.html(2) page. class: CreateStudyMaterial
+2022-07-10 20:52:58,903 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:53:11,707 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:53:18,825 - INFO - views - views.py - Study material updated successfully. class: UpdateStudyMaterial
+2022-07-10 20:53:18,872 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:53:23,541 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:53:23,543 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:53:26,214 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:54:14,976 - INFO - views - views.py - To display_task.html(5) page. class: CreateTask
+2022-07-10 20:54:15,035 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:54:15,043 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:54:15,043 - INFO - views - views.py - To testdb/task.html. class: DisplayTask
+2022-07-10 20:54:20,685 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:54:24,497 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:54:28,469 - INFO - views - views.py - Task updated successfully. class: UpdateTask
+2022-07-10 20:54:28,528 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:54:28,538 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:54:28,538 - INFO - views - views.py - To testdb/task.html. class: DisplayTask
+2022-07-10 20:54:30,428 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:54:30,429 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:54:31,848 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:55:13,921 - INFO - views - views.py - To display_task.html(6) page. class: CreateTask
+2022-07-10 20:55:13,962 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:55:13,966 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:55:13,966 - INFO - views - views.py - To testdb/task.html. class: DisplayTask
+2022-07-10 20:55:16,102 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:55:16,103 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:55:19,989 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:55:28,240 - INFO - views - views.py - Test created successfully. Redirect to display_test, class: CreateTest
+2022-07-10 20:55:28,296 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:55:28,380 - INFO - views - views.py - Get all info for displaying test. class: DisplayTest
+2022-07-10 20:55:28,380 - INFO - views - views.py - GET Render testdb/test.html, class: DisplayTest
+2022-07-10 20:55:30,801 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:55:35,653 - INFO - views - views.py - Test updated successfully. Redirect to display_test, class: UpdateTest
+2022-07-10 20:55:35,697 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:55:35,724 - INFO - views - views.py - Get all info for displaying test. class: DisplayTest
+2022-07-10 20:55:35,724 - INFO - views - views.py - GET Render testdb/test.html, class: DisplayTest
+2022-07-10 20:55:39,755 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:55:39,755 - INFO - views - views.py - GET testdb/question.html, created forms. class: CreateQuestion
+2022-07-10 20:56:30,901 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:56:32,887 - INFO - views - views.py - POST testdb/question.html, created successfully. class: CreateQuestion
+2022-07-10 20:56:32,934 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:56:33,067 - INFO - views - views.py - Get all info for displaying test. class: DisplayTest
+2022-07-10 20:56:33,067 - INFO - views - views.py - GET Render testdb/test.html, class: DisplayTest
+2022-07-10 20:56:37,445 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:56:43,373 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:56:43,388 - INFO - views - views.py - GET testdb/question.html. class: UpdateQuestion
+2022-07-10 20:56:50,203 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:56:50,206 - INFO - views - views.py - POST testdb/question.html, updated unsuccessfully. class: UpdateQuestion
+2022-07-10 20:56:57,748 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:56:57,801 - INFO - views - views.py - POST testdb/question.html, updated successfully. class: UpdateQuestion
+2022-07-10 20:56:57,833 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:56:57,851 - INFO - views - views.py - Get all info for displaying test. class: DisplayTest
+2022-07-10 20:56:57,851 - INFO - views - views.py - GET Render testdb/test.html, class: DisplayTest
+2022-07-10 20:57:00,358 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:00,360 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:57:05,160 - INFO - views - views.py - Query, class: CourseList
+2022-07-10 20:57:05,177 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:07,741 - INFO - views - views.py - Logout. Redirect to login, class: LogOut
+2022-07-10 20:57:07,786 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:15,595 - INFO - views - views.py - Login user. Redirect to home, class: LoginUser
+2022-07-10 20:57:15,652 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:15,652 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-10 20:57:18,660 - INFO - views - views.py - Query, class: CourseList
+2022-07-10 20:57:18,686 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:20,925 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:20,928 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:57:24,022 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:34,715 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:34,716 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:57:37,312 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:37,318 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:57:37,318 - INFO - views - views.py - To testdb/task.html. class: DisplayTask
+2022-07-10 20:57:45,830 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:45,841 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:57:46,186 - INFO - views - views.py - POST from testdb/task.html. class: DisplayTask
+2022-07-10 20:57:48,528 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:48,529 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:57:50,150 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:50,155 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:57:50,155 - INFO - views - views.py - To testdb/task.html. class: DisplayTask
+2022-07-10 20:57:53,471 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:53,474 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:57:54,701 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:57:54,729 - INFO - views - views.py - Get all info for displaying test. class: DisplayTest
+2022-07-10 20:57:54,729 - INFO - views - views.py - GET Render testdb/test.html, class: DisplayTest
+2022-07-10 20:58:00,370 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:58:00,556 - INFO - views - views.py - Get all info for displaying test. class: DisplayTest
+2022-07-10 20:58:00,557 - INFO - views - views.py - POST from testdb/test.html , class: DisplayTest
+2022-07-10 20:58:00,611 - INFO - views - views.py - Render_to_response to testdb/test.html , class: DisplayTest
+2022-07-10 20:58:02,579 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:58:02,579 - INFO - views - views.py - To journal.html page. class: JournalView
+2022-07-10 20:58:06,536 - INFO - views - views.py - Logout. Redirect to login, class: LogOut
+2022-07-10 20:58:06,564 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:58:11,584 - INFO - views - views.py - Login user. Redirect to home, class: LoginUser
+2022-07-10 20:58:11,655 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:58:11,656 - INFO - views - views.py - To index.html page. class: CourseHome
+2022-07-10 20:58:13,369 - INFO - views - views.py - Query, class: CourseList
+2022-07-10 20:58:13,397 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:58:16,303 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:58:16,306 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:58:21,572 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:58:21,576 - INFO - views - views.py - Load task_info from db, is_solved from journal_task. class: DisplayTask
+2022-07-10 20:58:21,576 - INFO - views - views.py - To testdb/task.html. class: DisplayTask
+2022-07-10 20:58:23,748 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:58:25,251 - INFO - views - views.py - Delete task from testdb/delete.html. class: DeleteTask
+2022-07-10 20:58:25,352 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:58:25,353 - INFO - views - views.py - Load study_materials, tests and tasks from db. class: ShowCourse
+2022-07-10 20:58:28,619 - INFO - views - views.py - Query, class: CourseList
+2022-07-10 20:58:28,642 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:58:30,634 - INFO - utils - utils.py - get_context. class: DataMixin
+2022-07-10 20:58:32,467 - INFO - views - views.py - Query, class: CourseList
+2022-07-10 20:58:32,506 - INFO - utils - utils.py - get_context. class: DataMixin
