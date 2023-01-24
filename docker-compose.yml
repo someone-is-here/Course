@@ -1,15 +1,17 @@
 version: "3.9"
-   
+
 services:
   db:
     image: postgres
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - "POSTGRES_HOST_AUTH_METHOD=trust"
       - POSTGRES_DB=learningdb
       - POSTGRES_USER=Tanusha
       - POSTGRES_PASSWORD=28072002TaTa!
+    container_name: db
+    networks:
+      - djangonetwork
   web:
     tty: true
     build: .
@@ -24,3 +26,10 @@ services:
       - POSTGRES_PASSWORD=28072002TaTa!
     depends_on:
       - db
+    links:
+      - db:db
+    networks:
+      - djangonetwork
+networks:
+  djangonetwork:
+    driver: bridge
