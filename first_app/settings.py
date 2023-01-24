@@ -111,7 +111,7 @@ DATABASES = {
             'NAME': 'learningdb',
             'USER': 'Tanusha',
             'PASSWORD': '28072002TaTa!',
-            'HOST': 'db',
+            'HOST': 'web-production-415d.up.railway.app',
             'PORT': 5432
     }
 }
