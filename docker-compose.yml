@@ -11,6 +11,8 @@ services:
       - POSTGRES_USER=Tanusha
       - POSTGRES_PASSWORD=28072002TaTa!
     container_name: db
+    networks:
+        - djangonetwork
   web:
     tty: true
     build: .
@@ -25,3 +27,10 @@ services:
       - POSTGRES_PASSWORD=28072002TaTa!
     depends_on:
       - db
+    links:
+        - db:db
+    networks:
+        - djangonetwork
+networks:
+  djangonetwork:
+    driver: bridge

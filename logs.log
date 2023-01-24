@@ -1,0 +1,4 @@
+2023-01-24 09:17:43,560 - INFO - utils - utils.py - get_context. class: DataMixin
+2023-01-24 09:17:43,561 - INFO - views - views.py - To index.html page. class: CourseHome
+2023-01-24 09:24:38,137 - INFO - utils - utils.py - get_context. class: DataMixin
+2023-01-24 09:24:38,137 - INFO - views - views.py - To index.html page. class: CourseHome
