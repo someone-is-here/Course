@@ -104,9 +104,16 @@ WSGI_APPLICATION = 'first_app.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+
 DATABASES = {
-     'default': dj_database_url.config(default='postgresql://postgres:postgres@localhost:5432/learningdb',
-                                       conn_max_age=600)
+    'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'learningdb',
+            'USER': 'Tanusha',
+            'PASSWORD': 'Tanusha!',
+            'HOST': 'db',
+            'PORT': 5432
+    }
 }
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

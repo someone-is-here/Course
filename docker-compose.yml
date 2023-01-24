@@ -8,7 +8,7 @@ services:
     environment:
       - POSTGRES_DB=learningdb
       - POSTGRES_USER=Tanusha
-      - POSTGRES_PASSWORD=28072002TaTa!
+      - POSTGRES_PASSWORD=Tanusha!
     container_name: db
     networks:
       - djangonetwork
@@ -23,7 +23,7 @@ services:
     environment:
       - POSTGRES_NAME=learningdb
       - POSTGRES_USER=Tanusha
-      - POSTGRES_PASSWORD=28072002TaTa!
+      - POSTGRES_PASSWORD=Tanusha!
     depends_on:
       - db
     links:
