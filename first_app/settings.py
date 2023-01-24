@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
-import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +26,7 @@ SECRET_KEY = 'django-insecure-_z!2^pjj&a=bx55_^7p%=3w09bozy2-qlq0mbydrsua-+b+!er
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = [] # for docker compose '0.0.0.0'
+ALLOWED_HOSTS = ['localhost', '0.0.0.0'] # for docker compose '0.0.0.0'
 
 # Application definition
 
@@ -108,8 +107,12 @@ WSGI_APPLICATION = 'first_app.wsgi.application'
 
 DATABASES = {
     'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'learningdb',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 # Password validation
@@ -163,5 +166,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-django_heroku.settings(locals())
