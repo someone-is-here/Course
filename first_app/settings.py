@@ -105,16 +105,12 @@ WSGI_APPLICATION = 'first_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'learningdb',
-            'USER': 'Tanusha',
-            'PASSWORD': '28072002TaTa!',
-            'HOST': 'web-production-415d.up.railway.app',
-            'PORT': 5432
-    }
+     'default': dj_database_url.config(default='postgresql://postgres:jD5wcPp9REmxSf0Thcmw@containers-us-west-38.railway.app:5491/railway',
+                                       conn_max_age=600)
 }
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
