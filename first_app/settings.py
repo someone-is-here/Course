@@ -110,7 +110,7 @@ DATABASES = {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'learningdb',
             'USER': 'Tanusha',
-            'PASSWORD': 'Tanusha!',
+            'PASSWORD': '28072002TaTa!',
             'HOST': 'db',
             'PORT': 5432
     }
@@ -165,5 +165,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'Course/static')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
